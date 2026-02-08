@@ -1,0 +1,35 @@
+.stats {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 5;
+}
+.stat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.value {
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 6px;
+  background: #fff;
+}
+.label {
+  color: var(--muted);
+  font-size: 13px;
+  background: #fff;
+}
+@media (max-width: 720px) {
+  .profile {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+}

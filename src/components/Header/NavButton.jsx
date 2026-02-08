@@ -1,0 +1,9 @@
+export default function NavButton({ href, children }) {
+  return (
+    <>
+      <li>
+        <a href={href}>{children}</a>
+      </li>
+    </>
+  );
+}

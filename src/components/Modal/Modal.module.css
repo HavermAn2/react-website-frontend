@@ -1,0 +1,244 @@
+dialog {
+  border: none;
+  margin: auto;
+  border-radius: 15px;
+  padding: 30px;
+  animation: dialogIn 0.25s ease-out;
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.725);
+}
+.content h2 {
+  font-size: 48px;
+  font-family: "Lateef";
+  font-weight: 400;
+  text-align: center;
+  color: #000;
+}
+.modal {
+  display: flex;
+  gap: 25px;
+  background: #ebe1d8;
+  padding: 20px 24px;
+  border-radius: 8px;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+}
+.modal h2 {
+  font-size: 48px;
+  font-family: "Lateef";
+  font-weight: 200;
+  text-align: center;
+  color: #000;
+}
+.dialogImg {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 0;
+}
+.dialogImg img {
+  width: auto;
+  height: 200px;
+  border-radius: 5px;
+}
+.dialogImg h3 {
+  font-size: 24px;
+  font-family: "Lateef";
+  font-weight: 400;
+  color: #000;
+}
+.line {
+  width: 1px;
+  background-color: #cecece;
+}
+.form {
+  background: transparent;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  max-height: 350px;
+}
+.name,
+.phone,
+.time,
+.msg {
+  font-family: "Lateef";
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid #8b8b8b;
+  max-width: 200px;
+}
+.date {
+  font-family: "Lateef";
+  cursor: pointer;
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid #8b8b8b;
+  max-width: 100vw;
+}
+.sendBtn {
+  background: transparent;
+  background-color: #d0b282;
+  border: none;
+  border-radius: 3px;
+  width: 40%;
+  max-width: 100px;
+  align-self: center;
+  font-family: "Lateef";
+  font-size: 20px;
+  cursor: pointer;
+}
+.sendBtn:hover {
+  background-color: #d8bf97;
+  transform: scale(1.02);
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.template {
+  display: none;
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1000px) {
+  dialog {
+    border: none;
+    margin: auto;
+    border-radius: 15px;
+    padding: 5px;
+    animation: dialogIn 0.25s ease-out;
+  }
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.725);
+  }
+  .content h2 {
+    font-size: 48px;
+    font-family: "Lateef";
+    font-weight: 400;
+    text-align: center;
+    color: #000;
+  }
+  .modal {
+    display: flex;
+    gap: 10px;
+    background: #ebe1d8;
+    padding: 20px 24px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+  }
+  .modal h2 {
+    font-size: 48px;
+    font-family: "Lateef";
+    font-weight: 200;
+    text-align: center;
+    color: #000;
+  }
+  .dialogImg {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 0;
+  }
+  .dialogImg img {
+    width: auto;
+    height: 150px;
+    border-radius: 5px;
+  }
+  .dialogImg h3 {
+    font-size: 24px;
+    font-family: "Lateef";
+    font-weight: 400;
+    color: #000;
+  }
+  .line {
+    width: 1px;
+    background-color: #cecece;
+  }
+  .form {
+    background: transparent;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    max-height: 350px;
+  }
+  .name,
+  .phone,
+  .time,
+  .msg {
+    font-family: "Lateef";
+    background: transparent;
+    border-radius: 3px;
+    border: 1px solid #8b8b8b;
+    max-width: 35vw;
+  }
+  .date {
+    font-family: "Lateef";
+    cursor: pointer;
+    background: transparent;
+    border-radius: 3px;
+    border: 1px solid #8b8b8b;
+    max-width: 35vw;
+  }
+  .sendBtn {
+    background: transparent;
+    background-color: #d0b282;
+    border: none;
+    border-radius: 3px;
+    width: 40%;
+    max-width: 100px;
+    align-self: center;
+    font-family: "Lateef";
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .sendBtn:hover {
+    background-color: #d8bf97;
+    transform: scale(1.02);
+  }
+
+  .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .template {
+    display: none;
+  }
+
+  @keyframes dialogIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

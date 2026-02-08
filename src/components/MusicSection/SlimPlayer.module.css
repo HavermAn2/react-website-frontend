@@ -1,0 +1,250 @@
+.track {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background-color: #d9cfc2;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+.track__cover {
+  width: 10%;
+  height: 90%;
+}
+.track__title {
+  font-weight: 400;
+  font-size: clamp(28px, 4.5vw, 48px);
+  background: transparent;
+}
+.track__meta {
+  font-weight: 400;
+  font-size: clamp(14px, 2.2vw, 24px);
+  background: transparent;
+}
+.track__body {
+  background-color: #d9cfc2;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+:root {
+  /* подгони под свою палитру */
+  --track-bg: #575757; /* фон дорожки */
+  --track-fill: #6b6b6b; /* линия прогресса */
+  --thumb: #575757; /* кружок-ползунок и иконки */
+  --buffer: #9f9a93; /* буфер (серее) */
+  --text: #1b1b1b; /* цвет времени */
+}
+
+/* базовая раскладка без панели */
+.playerSlim {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  min-width: 0;
+  font:
+    14px/1.2 "Hind Siliguri",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: var(--text);
+  background-color: #d9cfc2;
+}
+
+/* Play: треугольник / пауза */
+.playerSlim .plBtn {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex: 0 0 22px;
+}
+.playerSlim .plBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 10px solid var(--thumb);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  background: transparent;
+}
+.playerSlim .plBtn[data-state="playing"]::before {
+  width: 12px;
+  height: 12px;
+  border: none;
+  background:
+    linear-gradient(var(--thumb), var(--thumb)) left/4px 12px no-repeat,
+    linear-gradient(var(--thumb), var(--thumb)) right/4px 12px no-repeat;
+}
+.playerSlim .plTimeline {
+  flex: 1 1 auto;
+
+  background: transparent;
+}
+.playerSlim .plRange {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transform: translateY(-1px);
+  background: var(--track-bg);
+}
+.playerSlim .plRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--thumb);
+  border: none;
+  margin-top: -1px;
+}
+.playerSlim .plRange::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--thumb);
+  border: none;
+}
+.playerSlim .plRange::-moz-range-track {
+  height: 6px;
+  background: var(--track-bg);
+  border-radius: 6px;
+}
+.playerSlim .plRange {
+  background-image: linear-gradient(var(--track-fill), var(--track-fill));
+  background-repeat: no-repeat;
+  background-size: 0% 6px;
+}
+.playerSlim .plTime {
+  font-size: 12px;
+  opacity: 0.9;
+  white-space: nowrap;
+  background: transparent;
+}
+.playerSlim .plVol {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* выровнять все элементы плеера по центру по вертикали */
+.playerSlim {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* кнопка громкости */
+.playerSlim .plVol {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex; /* центрируем иконку */
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* сами SVG-иконки */
+.playerSlim .plVol .icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  background: transparent;
+}
+.isMuted .on {
+  display: none;
+}
+.isMuted .off {
+  display: block;
+}
+.off {
+  display: none;
+}
+
+/* по умолчанию показываем только "on" */
+.playerSlim .plVol .off {
+  display: none;
+}
+
+/* когда кнопка в муте — переключаем иконки */
+.playerSlim .plVol.isMuted .on {
+  display: none;
+}
+.playerSlim .plVol.isMuted .off {
+  display: block;
+}
+@media (max-width: 1200px) {
+  .track__cover {
+    width: 15%;
+    height: 100%;
+  }
+}
+@media (max-width: 720px) {
+  .track {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .track__cover {
+    width: 100%;
+    height: 60vw;
+  }
+  .track__body {
+    text-align: center;
+  }
+  .playerSlim {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .plTimeline {
+    position: relative;
+    min-width: 80%;
+  }
+  .plBtn {
+    width: 40px;
+    height: 40px;
+  }
+  .playerSlim .plBtn::before {
+    border-left: 28px solid var(--thumb);
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+  }
+  .playerSlim .plBtn[data-state="playing"]::before {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background:
+      linear-gradient(var(--thumb), var(--thumb)) left/4px 12px no-repeat,
+      linear-gradient(var(--thumb), var(--thumb)) right/4px 12px no-repeat;
+  }
+  .playerSlim .plTime {
+    display: none;
+  }
+  .playerSlim .plVol .icon {
+    display: none;
+    /* position: absolute;
+    right: 5vw;
+    top: 87.5vw; */
+  }
+}

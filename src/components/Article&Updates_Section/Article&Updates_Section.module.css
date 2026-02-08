@@ -1,0 +1,222 @@
+.articlesAndUpdates {
+  padding: 10px 14px 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.textContainer h1 {
+  font-family: "Lateef", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+}
+.textContainer p {
+  font-family: "Lateef", sans-serif;
+  max-width: min(90ch, 100ch);
+  font-size: 20px;
+  margin: 0 auto;
+}
+.textContainer {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 80px;
+  scrollbar-width: none;
+  margin-top: 50px;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+.sliderBtn {
+  position: absolute;
+  height: 62px;
+  width: 62px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  font-size: 35px;
+  place-items: center;
+  border: none;
+  border-radius: 10px;
+  background: #bc9450;
+  color: #fff;
+}
+
+.sliderBtn.prev {
+  left: -31px;
+}
+
+.sliderBtn.next {
+  right: -31px;
+}
+.slider {
+  position: relative;
+  margin: 20px;
+}
+.viewport {
+  width: calc(400px * 3+ 25px * 2); /* 3 карточки + 2 gap */
+  overflow: hidden;
+}
+.card {
+  background-color: #d4a574;
+  height: 45rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+
+  flex: 0 0 80%;
+  max-width: 400px;
+  transition: justify-content 0.3s ease;
+  will-change: transform;
+  transition: transform 420ms cubic-bezier(0.22, 0.8, 0.22, 1);
+}
+/* .card.right {
+  transform: translateX(480px);
+} */
+.cardView img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*заполнить без искажений */
+  object-position: center 40%; /* смещение фокуса (подвинь по вкусу) */
+}
+.cardView {
+  aspect-ratio: 16 / 12;
+  overflow: hidden; /* чтобы скругления обрезали фото */
+}
+.cardTxt {
+  width: 100%;
+  background: transparent;
+  max-height: 185px;
+}
+.cardTxt h1 {
+  padding-top: 15px;
+  text-align: center;
+  font-family: "Lateef";
+  background: transparent;
+  font-size: 32px;
+  font-weight: 400;
+  color: #5a4a42;
+}
+.cardTxt p {
+  background: transparent;
+  font-family: "Lateef";
+  font-size: 20px;
+  color: #5a4a42;
+  text-align: center;
+  padding: 5px 10px 5px;
+}
+.findOutMoreBtn {
+  font-family: "Lateef";
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  background: #965721;
+  background: linear-gradient(
+    221deg,
+    rgba(150, 87, 33, 1) 0%,
+    rgba(193, 157, 87, 1) 100%
+  );
+  border-radius: 20px;
+  padding: 0px 10px 0px;
+}
+.findOutMore {
+  background: transparent;
+  place-self: center;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+  .textContainer h1 {
+    font-size: 36px;
+  }
+  .textContainer p {
+    font-size: 18px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cardTxt {
+    max-height: 150px;
+    height: 150px;
+  }
+  .cardTxt h1 {
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  .cardTxt p {
+    font-size: 14px;
+  }
+  .card {
+    height: 385px;
+    max-width: 190px;
+    border-radius: 15px;
+  }
+  .sliderBtn {
+    height: 30px;
+    width: 30px;
+  }
+  .findOutMoreBtn {
+    font-size: 12px;
+  }
+  .slider button {
+    font-size: 16px;
+  }
+  .sliderBtn.prev {
+    left: -15px;
+  }
+
+  .sliderBtn.next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 720px) {
+  .articlesAndUpdates {
+    padding: 10px 10px 10px;
+  }
+  .textContainer h1 {
+    font-size: 30px;
+  }
+  .textContainer p {
+    font-size: 14px;
+  }
+  .cards {
+    gap: 10px;
+  }
+  .cardTxt {
+    max-height: 100px;
+    height: 100px;
+  }
+  .cardTxt h1 {
+    font-size: 14px;
+    padding-top: 5px;
+  }
+  .cardTxt p {
+    font-size: 12px;
+    padding: 0px 6px 0px;
+  }
+  .card {
+    height: 250px;
+    max-width: 165px;
+    border-radius: 10px;
+  }
+  .sliderBtn {
+    height: 30px;
+    width: 30px;
+  }
+  .findOutMoreBtn {
+    font-size: 12px;
+  }
+  .slider button {
+    font-size: 12px;
+  }
+  .sliderBtn.prev {
+    left: -15px;
+  }
+
+  .sliderBtn.next {
+    right: -15px;
+  }
+}

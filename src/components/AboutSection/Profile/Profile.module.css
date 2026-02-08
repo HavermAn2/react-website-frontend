@@ -1,0 +1,77 @@
+.profile {
+  max-width: 1440px;
+  width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  align-items: center;
+}
+.profilePhoto {
+  position: relative;
+  justify-self: center;
+}
+.aboutPhoto {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.badge {
+  position: absolute;
+  right: -50px;
+  bottom: 20px;
+  background: #b58948;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.1;
+  font-size: 14px;
+  text-align: center;
+}
+.aboutName {
+  margin: 0 0 6px;
+  color: #000;
+  font-weight: 700;
+
+  font-size: clamp(20px, 2.8vw, 48px);
+}
+.aboutAlias {
+  margin: 0 0 14px;
+  color: #000;
+  font-weight: 800;
+  font-size: clamp(28px, 4.8vw, 48px);
+  letter-spacing: 0.01em;
+}
+.aboutText {
+  margin: 0 0 18px;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+@media (max-width: 720px) {
+  .profile {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .profilePhoto {
+    order: 1;
+  }
+  .aboutContent {
+    order: 2;
+    text-align: center;
+  }
+  .aboutText {
+    margin-inline: auto;
+  }
+
+  .badge {
+    right: 0;
+    bottom: 10px;
+    transform: translateX(18px);
+  }
+}

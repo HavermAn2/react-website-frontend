@@ -1,0 +1,156 @@
+.containeer {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 50px 0px;
+  place-items: center;
+  gap: 30px;
+}
+.card {
+  position: sticky;
+  max-width: 100rem;
+  top: 0px;
+  z-index: 5;
+  background-color: #d4a574;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.card.odd {
+  background-color: #995c24;
+}
+
+.cardImg img {
+  border-bottom-right-radius: 20px;
+  /* display: grid; */
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.cardText h1 {
+  font-size: 48px;
+  font-family: "Lateef";
+  font-weight: 400;
+  background: transparent;
+  color: #000;
+}
+
+.cardText h2,
+h3 {
+  font-size: 40px;
+  font-family: "Lateef";
+  font-weight: 400;
+  background: transparent;
+  color: #000;
+}
+.cardText a {
+  text-decoration: none;
+  border-radius: 20px;
+  background: #975a23;
+  background: linear-gradient(
+    221deg,
+    rgba(151, 90, 35, 1) 0%,
+    rgba(190, 153, 84, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  padding: 0px 50px 0px;
+  font-family: "Lateef";
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    gap: 20px;
+  }
+  .containeer {
+    margin-top: 25px;
+  }
+
+  .cardImg img {
+    display: grid;
+    height: 320px;
+  }
+
+  .cardText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+  .cardText h1 {
+    font-size: 30px;
+    font-family: "Lateef";
+    font-weight: 400;
+    background: transparent;
+    color: #000;
+  }
+
+  .cardText h2,
+  h3 {
+    font-size: 22px;
+    font-family: "Lateef";
+    font-weight: 400;
+    background: transparent;
+    color: #000;
+  }
+
+  .cardText a {
+    font-size: 24px;
+  }
+}
+@media (max-width: 720px) {
+  .cards {
+    gap: 10px;
+  }
+  .cardImg img {
+    display: grid;
+    height: 170px;
+  }
+
+  .cardText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    max-height: 170px;
+    max-width: 170px;
+    width: 170px;
+  }
+  .cardText h1 {
+    font-size: 26px;
+    font-family: "Lateef";
+    font-weight: 400;
+    background: transparent;
+    color: #000;
+  }
+
+  .cardText h2,
+  h3 {
+    font-size: 18px;
+    font-family: "Lateef";
+    font-weight: 400;
+    background: transparent;
+    color: #000;
+  }
+  .cardText a {
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    padding: 0px 20px 0px;
+  }
+}

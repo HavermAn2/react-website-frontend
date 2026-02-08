@@ -1,0 +1,97 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1440px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px;
+  margin: 0px auto;
+  background-color: #d9cfc2;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.conttainerForAbsolute {
+  position: relative;
+  background: transparent;
+}
+.track {
+  display: flex;
+  gap: 12px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* .container button:active {
+  background-color: #a89a86;
+} */
+
+.track:hover {
+  border-radius: 10px;
+  background-color: #c8bba9;
+}
+.track.active {
+  background-color: #a89a86;
+}
+.appleMusic {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+
+  color: #fff;
+  background: #ffffff;
+}
+
+/* .appleMusic:hover {
+  background: #e09ea6;
+} */
+/* .appleMusic img {
+  mix-blend-mode: multiply;
+} */
+.title {
+  max-width: 1440px;
+  margin: 0px auto;
+  background: transparent;
+}
+.title h1 {
+  font-family: "Lateef";
+  position: relative;
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
+  background-color: #d9cfc2;
+}
+.textContainer {
+  background: transparent;
+  padding: 5px;
+}
+
+.textContainer div {
+  background: transparent;
+}
+.cardImg {
+  background: transparent;
+  padding: 5px;
+}
+.cardImg img {
+  display: flex;
+  border-radius: 10px;
+  width: 46px;
+  height: 46px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

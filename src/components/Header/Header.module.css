@@ -1,0 +1,107 @@
+.header .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.icon {
+  width: 70px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.text:hover {
+  cursor: pointer;
+}
+
+.title {
+  color: #000000;
+}
+
+.tagline {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 400;
+
+  color: #000000;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.nav {
+  margin: 0 auto;
+}
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  /* flex-wrap: wrap; */
+}
+.navList a,
+.navList .more {
+  text-decoration: none;
+  color: #222;
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.navList a:hover {
+  color: #d0b282;
+}
+.navList li {
+  font-size: 16px;
+}
+.getInTouchBtn {
+  padding: 10px 16px;
+  border-radius: 15px;
+  background: #d0b282;
+  color: #000000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.getInTouchBtn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 720px) {
+  .header {
+    flex-wrap: wrap;
+  }
+  .container {
+    display: grid;
+    flex-wrap: wrap;
+  }
+  .nav {
+    order: 3;
+    width: 100%;
+  }
+  .navList {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .getInTouchBtn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 10px;
+    border-radius: 10px;
+  }
+}

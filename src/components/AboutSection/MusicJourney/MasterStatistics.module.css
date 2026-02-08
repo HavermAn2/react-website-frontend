@@ -1,0 +1,88 @@
+.masterStatistics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 5px solid #e7dac1;
+  border-radius: 20px;
+  width: 90vw;
+  max-width: 1440px;
+  height: clamp(100px, 15vw, 200px);
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.masterStatistics div {
+  place-self: center;
+}
+.masterStatistics h1 {
+  font-size: 48px;
+  color: #c9ab66;
+  text-align: center;
+}
+.masterStatistics h3 {
+  font-size: 24px;
+  color: #8b7355;
+  font-weight: 400;
+}
+
+.footerBooking {
+  text-align: center;
+  margin: 35px 0 35px;
+}
+.footerBooking h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8b7355;
+  padding-bottom: 25px;
+}
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-decoration: none;
+}
+.bookingBtn {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 7px;
+  background: #975922;
+  background: linear-gradient(
+    221deg,
+    rgba(151, 89, 34, 1) 0%,
+    rgba(196, 160, 90, 1) 100%
+  );
+  padding: 10px 35px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.contactBtn {
+  color: #8b4513;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 7px;
+  border: 1px solid #c9a961;
+  padding: 10px 35px 10px;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .masterStatistics h1 {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+  .masterStatistics h3 {
+    font-size: 10px;
+    text-align: center;
+  }
+  .btnContainer {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .footerBooking h3 {
+    font-size: 16px;
+  }
+  .bookingBtn,
+  .contactBtn {
+    font-size: 14px;
+    padding: 8px 25px 8px;
+  }
+}

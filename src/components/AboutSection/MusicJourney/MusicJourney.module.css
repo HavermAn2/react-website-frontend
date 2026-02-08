@@ -1,0 +1,88 @@
+.container {
+  margin: 0 auto;
+
+  background-color: #fff;
+  width: 90vw;
+  height: auto;
+  max-width: 1440px;
+  place-content: center;
+  margin-top: 50px;
+  border-radius: 20px;
+  display: flow-root;
+}
+
+.title {
+  font-size: clamp(20px, 22.2vw, 48px);
+
+  color: #c9ab66;
+  background: transparent;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  position: relative;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 5px;
+  background: currentColor;
+  border-radius: 9999px;
+  margin-top: -10px;
+}
+
+.textContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-left: clamp(50px, 6vw, 80px);
+  padding-right: clamp(50px, 6vw, 80px);
+  background: transparent;
+}
+.textContainer div {
+  background-color: #ffffff;
+  font-size: 20px;
+}
+.textContainer div strong {
+  background-color: #fff;
+  font-size: 20px;
+}
+.textLReft {
+  background-color: #f9f6ef;
+  padding: 25px 12px 25px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 720px) {
+  .textContainer {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .textContainer div {
+    background-color: #ffffff;
+    font-size: 14px;
+  }
+  .textContainer div strong {
+    font-size: 14px;
+  }
+
+  .title::after {
+    width: 55%;
+    margin-top: 10px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 1;
+    margin: 0;
+    display: block;
+    margin: 25px 20px 50px;
+  }
+}
