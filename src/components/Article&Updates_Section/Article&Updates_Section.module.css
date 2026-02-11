@@ -43,18 +43,18 @@
 }
 
 .sliderBtn.prev {
-  left: -31px;
+  left: -50px;
 }
 
 .sliderBtn.next {
-  right: -31px;
+  right: -50px;
 }
 .slider {
   position: relative;
-  margin: 20px;
+  margin: 14px;
 }
 .viewport {
-  width: calc(400px * 3+ 25px * 2); /* 3 карточки + 2 gap */
+  width: calc(400px * 3+ 25px * 2);
   overflow: hidden;
 }
 .card {
@@ -134,9 +134,11 @@
     font-size: 18px;
   }
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8vw;
   }
-
+  .viewport {
+    width: calc(88vw);
+  }
   .cardTxt {
     max-height: 150px;
     height: 150px;
@@ -148,11 +150,7 @@
   .cardTxt p {
     font-size: 14px;
   }
-  .card {
-    height: 385px;
-    max-width: 190px;
-    border-radius: 15px;
-  }
+
   .sliderBtn {
     height: 30px;
     width: 30px;
@@ -182,8 +180,11 @@
   .textContainer p {
     font-size: 14px;
   }
+  .viewport {
+    width: calc(88vw);
+  }
   .cards {
-    gap: 10px;
+    gap: 8vw;
   }
   .cardTxt {
     max-height: 100px;
@@ -198,9 +199,9 @@
     padding: 0px 6px 0px;
   }
   .card {
-    height: 250px;
-    max-width: 165px;
-    border-radius: 10px;
+    height: 80vw;
+    max-width: 40vw;
+    border-radius: 15px;
   }
   .sliderBtn {
     height: 30px;

@@ -185,11 +185,11 @@
 .dotOutNoline::before {
   content: "";
   position: absolute;
-  top: 100%; /* начинаем ровно под точкой */
-  left: 50%; /* по центру */
-  transform: translateX(-50%); /* выравниваем по центру */
-  width: 5px; /* толщина линии */
-  height: 50px; /* длина линии */
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 50px;
   background: #c9a961;
 }
 @media (max-width: 720px) {

@@ -1,7 +1,8 @@
 import track from "./TrackList.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function TrackList({ tracks, currentId, onSelect }) {
   const [selectedMusic, setSelectedMusic] = useState(null);
+
   // function onHandleSelectMusic(){
   //   setSelectedMusic(t.)
   // }
@@ -25,7 +26,7 @@ export default function TrackList({ tracks, currentId, onSelect }) {
               aria-current={t.id === currentId ? "true" : "false"}
             >
               <div className={track.cardImg}>
-                <img src={t.imgSrc} alt="" />
+                <img src={`http://127.0.0.1:8000/${t.photo_path}`} alt="" />
               </div>
               <div
                 style={{ background: "transparent" }}
@@ -42,7 +43,7 @@ export default function TrackList({ tracks, currentId, onSelect }) {
                     color: "black",
                   }}
                 >
-                  {t.artist} {t.meta ? `• ${t.meta}` : ""}
+                  {t.artist} {t.description ? `• ${t.description}` : ""}
                 </div>
               </div>
               {/* <button className={track.appleMusic}>

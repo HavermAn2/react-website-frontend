@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import track from "./SlimPlayer.module.css";
 
 const allAudios = []; // общий список для “паузы остальных”

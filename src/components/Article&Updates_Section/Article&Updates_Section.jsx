@@ -50,7 +50,7 @@ export const articles = [
 export default function ArticleSection() {
   const [moved, setMoved] = useState(0);
   function handleMoveRight() {
-    setMoved((prev) => prev - 1);
+    if (moved > -articles.length + 2) setMoved((prev) => prev - 1);
   }
   function handleMoveLeft() {
     if (moved < 0) {
@@ -82,7 +82,7 @@ export default function ArticleSection() {
               <div
                 key={item.id}
                 className={`${article.card} ${article.cardTemplate}`}
-                style={{ transform: `translateX(${480 * moved}px)` }}
+                style={{ transform: `translateX(${120 * moved}%)` }}
               >
                 <div className={article.cardView}>
                   <img src={item.imgUrl} />

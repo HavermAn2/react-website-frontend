@@ -13,22 +13,31 @@
 }
 .card {
   position: sticky;
-  max-width: 100rem;
+  max-width: 1100px;
+  max-height: 500px;
+  height: 500px;
   top: 0px;
   z-index: 5;
   background-color: #d4a574;
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr 1fr;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
 .card.odd {
   background-color: #995c24;
 }
+.cardImg {
+  aspect-ratio: 5 / 5;
+}
 
 .cardImg img {
   border-bottom-right-radius: 20px;
-  /* display: grid; */
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .cardText {
@@ -71,6 +80,10 @@ h3 {
 }
 
 @media (max-width: 1000px) {
+  .card {
+    max-width: 720px;
+    height: auto;
+  }
   .cards {
     gap: 20px;
   }
@@ -80,7 +93,6 @@ h3 {
 
   .cardImg img {
     display: grid;
-    height: 320px;
   }
 
   .cardText {
@@ -112,6 +124,10 @@ h3 {
   }
 }
 @media (max-width: 720px) {
+  .card {
+    max-width: 340px;
+    height: auto;
+  }
   .cards {
     gap: 10px;
   }

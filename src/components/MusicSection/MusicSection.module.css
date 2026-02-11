@@ -1,10 +1,10 @@
 .music {
-  padding: 56px 16px 32px; /* сверху больше, снизу меньше */
+  padding: 56px 16px 32px;
 }
 .music__inner {
-  max-width: 920px; /* ограничиваем строку */
+  max-width: 920px;
   margin: 0 auto;
-  text-align: center; /* центрируем заголовок и лид */
+  text-align: center;
 }
 .music__title {
   font-family: "Hind Siliguri", sans-serif;
@@ -19,7 +19,7 @@
   font-size: clamp(14px, 1.8vw, 16px);
   font-weight: 400;
   line-height: 1.7;
-  max-width: 70ch; /* комфортная длина строки */
+  max-width: 70ch;
   margin: 0 auto 24px;
   opacity: 0.95;
 }
@@ -44,7 +44,7 @@
 }
 .video-track {
   display: grid;
-  grid-template-rows: 2fr 1fr; /* превью + подпись */
+  grid-template-rows: 2fr 1fr;
   grid-template-columns: 1fr;
   background: #fff;
   border-radius: 20px;
@@ -53,7 +53,7 @@
   background-color: #d9cfc2;
   overflow: hidden;
 }
-/* Превью: держим пропорцию и центрируем play */
+
 .video-preview {
   position: relative;
   display: block;
@@ -66,7 +66,6 @@
   display: block;
 }
 
-/* Кнопка Play (треугольник) */
 .video-play {
   position: absolute;
   inset: 0;
@@ -82,10 +81,10 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-40%, -50%); /* чуть вправо визуально */
+  transform: translate(-40%, -50%);
   width: 0;
   height: 0;
-  border-left: 20px solid #000; /* цвет треугольника */
+  border-left: 20px solid #000;
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
@@ -93,7 +92,6 @@
   filter: brightness(0.95);
 }
 
-/* Подпись */
 .video-caption {
   background: transparent;
   padding: 12px 14px;
@@ -112,7 +110,7 @@
 
 @media (max-width: 720px) {
   .list-of-track {
-    grid-template-columns: 1fr; /* по одной колонке */
+    grid-template-columns: 1fr;
     gap: 12px;
     padding: 12px;
   }
@@ -124,7 +122,7 @@
 }
 @media (max-width: 1200px) {
   .list-of-track {
-    grid-template-columns: 1fr 1fr; /* по одной колонке */
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
     padding: 12px;
   }

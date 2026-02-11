@@ -61,7 +61,7 @@
 
 @media (max-width: 720px) {
   .hero {
-    padding: 28px 14px 40px;
+    padding: 20px 20px 40px;
   }
   .container {
     flex-direction: column-reverse;
@@ -75,7 +75,7 @@
   .rightPart {
     max-width: 720px;
     width: 100%;
-    flex: 0 0 auto;
+    /* flex: 0 0 auto; */
   }
 
   .title {
