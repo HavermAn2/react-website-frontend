@@ -64,13 +64,35 @@
   padding: 10px 35px 10px;
   cursor: pointer;
 }
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .masterStatistics h1 {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.1;
   }
   .masterStatistics h3 {
+    font-size: 13px;
+    text-align: center;
+  }
+  .btnContainer {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .footerBooking h3 {
     font-size: 10px;
+  }
+  .bookingBtn,
+  .contactBtn {
+    font-size: 10px;
+    padding: 4px 12px 4px;
+  }
+}
+@media (max-width: 900px) {
+  .masterStatistics h1 {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .masterStatistics h3 {
+    font-size: 14px;
     text-align: center;
   }
   .btnContainer {
@@ -82,7 +104,7 @@
   }
   .bookingBtn,
   .contactBtn {
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 25px 8px;
   }
 }

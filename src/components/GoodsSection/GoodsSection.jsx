@@ -1,32 +1,6 @@
 import goods from "./GoodsSection.module.css";
 import { useEffect, useState } from "react";
-export const goodsText = [
-  {
-    h1: "Acoustic Harp",
-    h2: "45 min",
-    h3: "From 3,000",
-    imgUrl: "/...",
-  },
-  {
-    h1: "Acoustic Harp",
-    h2: "45 min",
-    h3: "From 3,000",
-    imgUrl: "/...",
-  },
-  {
-    h1: "Electric Harp",
-    h2: "45 min",
-    h3: "From 3,000",
-    imgUrl: "/...",
-  },
 
-  {
-    h1: "Acoustic Harp",
-    h2: "45 min",
-    h3: "From 3,000",
-    imgUrl: "/...",
-  },
-];
 export default function GoodsSection({ onSelected, isOpen }) {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -48,8 +22,9 @@ export default function GoodsSection({ onSelected, isOpen }) {
   }, []);
 
   // const cards = data.data;
-  function onSecetedCard(cardTitle, cardDesc) {
-    onSelected({ title: cardTitle, desc: cardDesc });
+  function onSecetedCard(cardTitle, cardDesc, cardImg) {
+    console.log(data);
+    onSelected({ title: cardTitle, desc: cardDesc, image: cardImg });
     isOpen(true);
   }
 
@@ -71,7 +46,7 @@ export default function GoodsSection({ onSelected, isOpen }) {
                 href="#"
                 id="open-booking-btn"
                 onClick={() => {
-                  onSecetedCard(item.title, item.duration);
+                  onSecetedCard(item.title, item.duration, item.img);
                 }}
               >
                 Book Now

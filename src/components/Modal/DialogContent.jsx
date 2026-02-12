@@ -5,7 +5,7 @@ export default function DialogContent({ card }) {
       <h2>Booking</h2>
       <div className={modal.modal} id="booking-modal">
         <div className={modal.dialogImg}>
-          <img src="/Frame 39.png" />
+          <img src={`http://127.0.0.1:8000/${card.img}`} />
           <h3>{card.title}</h3>
           <h3>{card.desc}</h3>
         </div>

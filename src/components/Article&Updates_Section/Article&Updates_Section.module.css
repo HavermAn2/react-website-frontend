@@ -11,7 +11,7 @@
 .textContainer p {
   font-family: "Lateef", sans-serif;
   max-width: min(90ch, 100ch);
-  font-size: 20px;
+  font-size: 26px;
   margin: 0 auto;
 }
 .textContainer {
@@ -76,12 +76,14 @@
 .cardView img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /*заполнить без искажений */
-  object-position: center 40%; /* смещение фокуса (подвинь по вкусу) */
+  object-fit: cover;
+  object-position: center 40%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .cardView {
   aspect-ratio: 16 / 12;
-  overflow: hidden; /* чтобы скругления обрезали фото */
+  overflow: hidden;
 }
 .cardTxt {
   width: 100%;
@@ -93,14 +95,14 @@
   text-align: center;
   font-family: "Lateef";
   background: transparent;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
   color: #5a4a42;
 }
 .cardTxt p {
   background: transparent;
   font-family: "Lateef";
-  font-size: 20px;
+  font-size: 28px;
   color: #5a4a42;
   text-align: center;
   padding: 5px 10px 5px;
@@ -145,10 +147,10 @@
   }
   .cardTxt h1 {
     padding-top: 10px;
-    font-size: 20px;
+    font-size: 24px;
   }
   .cardTxt p {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .sliderBtn {
@@ -171,6 +173,58 @@
 }
 
 @media (max-width: 720px) {
+  .articlesAndUpdates {
+    padding: 10px 10px 10px;
+  }
+  .textContainer h1 {
+    font-size: 30px;
+  }
+  .textContainer p {
+    font-size: 14px;
+  }
+  .viewport {
+    width: calc(88vw);
+  }
+  .cards {
+    gap: 8vw;
+  }
+  .cardTxt {
+    max-height: 100px;
+    height: 100px;
+  }
+  .cardTxt h1 {
+    font-size: 20px;
+    padding-top: 5px;
+  }
+  .cardTxt p {
+    font-size: 15px;
+    padding: 0px 6px 0px;
+  }
+  .card {
+    height: 80vw;
+    max-width: 40vw;
+    border-radius: 15px;
+  }
+  .sliderBtn {
+    height: 30px;
+    width: 30px;
+  }
+  .findOutMoreBtn {
+    font-size: 12px;
+  }
+  .slider button {
+    font-size: 12px;
+  }
+  .sliderBtn.prev {
+    left: -15px;
+  }
+
+  .sliderBtn.next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 390px) {
   .articlesAndUpdates {
     padding: 10px 10px 10px;
   }

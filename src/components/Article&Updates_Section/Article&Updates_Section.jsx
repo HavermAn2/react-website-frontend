@@ -1,56 +1,25 @@
 import article from "./Article&Updates_Section.module.css";
-import { useState } from "react";
-export const articles = [
-  {
-    h1: "March 22, 2022",
-    p: "Dubai Bling is a Netflix  reality show featuring cast members who are among the high-net-worth  individuals from the glamorous city of UAE.",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "October 30, 2022",
-    p: "It was an honor to be a part of this magical lifetime moment! Kris And Brianna Fade Wedding",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "December 29, 2022",
-    p: "Slavrada got a Guinness World Record for the longest marathon harp playing - 31 hour 1 minute and 54 seconds",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "March 22, 2022",
-    p: "Dubai Bling is a Netflix  reality show featuring cast members who are among the high-net-worth  individuals from the glamorous city of UAE.",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "October 30, 2022",
-    p: "It was an honor to be a part of this magical lifetime moment! Kris And Brianna Fade Wedding",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "December 29, 2022",
-    p: "Slavrada got a Guinness World Record for the longest marathon harp playing - 31 hour 1 minute and 54 seconds",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "March 22, 2022",
-    p: "Dubai Bling is a Netflix  reality show featuring cast members who are among the high-net-worth  individuals from the glamorous city of UAE.",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "October 30, 2022",
-    p: "It was an honor to be a part of this magical lifetime moment! Kris And Brianna Fade Wedding",
-    imgUrl: "/Rectangle 1.png",
-  },
-  {
-    h1: "December 29, 2022",
-    p: "Slavrada got a Guinness World Record for the longest marathon harp playing - 31 hour 1 minute and 54 seconds",
-    imgUrl: "/Rectangle 1.png",
-  },
-];
+import { useState, useEffect } from "react";
+
 export default function ArticleSection() {
   const [moved, setMoved] = useState(0);
+  const [articleData, serArticleData] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:8000/get_articles")
+      .then((response) => response.json())
+      .then((res) => {
+        const list = (res.data ?? []).map(([id, h1, p, imgUrl]) => ({
+          id,
+          h1,
+          p,
+          imgUrl,
+        }));
+        serArticleData(list);
+      })
+      .catch(console.error);
+  }, []);
   function handleMoveRight() {
-    if (moved > -articles.length + 2) setMoved((prev) => prev - 1);
+    if (moved > -articleData.length + 2) setMoved((prev) => prev - 1);
   }
   function handleMoveLeft() {
     if (moved < 0) {
@@ -78,14 +47,14 @@ export default function ArticleSection() {
         </button>
         <div className={article.viewport}>
           <div className={article.cards} id="cards-container">
-            {articles.map((item) => (
+            {articleData.map((item) => (
               <div
                 key={item.id}
                 className={`${article.card} ${article.cardTemplate}`}
                 style={{ transform: `translateX(${120 * moved}%)` }}
               >
                 <div className={article.cardView}>
-                  <img src={item.imgUrl} />
+                  <img src={`http://127.0.0.1:8000/${item.imgUrl}`} />
                 </div>
                 <div className={article.cardTxt}>
                   <h1>{item.h1}</h1>

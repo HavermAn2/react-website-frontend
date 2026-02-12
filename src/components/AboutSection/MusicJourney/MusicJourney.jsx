@@ -34,15 +34,21 @@ export default function MusicJourney() {
         <div className={musicJor.textContainer}>
           {musicJourneyText.map((item, index) =>
             item.strong ? (
-              <div key={index}>
+              <div className={musicJor.simpleArticle} key={index}>
                 <strong>{item.strong}</strong> {item.text}
               </div>
             ) : item.variant ? (
-              <div className={musicJor.textLReft} key={index}>
+              <div
+                className={musicJor.textLReft}
+                // style={{ backgroundColor: "#f9f6ef" }}
+                key={index}
+              >
                 {item.text}
               </div>
             ) : (
-              <div key={index}>{item.text}</div>
+              <div className={musicJor.simpleArticle} key={index}>
+                {item.text}
+              </div>
             ),
           )}
         </div>

@@ -1,6 +1,5 @@
 .container {
   margin: 0 auto;
-
   background-color: #fff;
   width: 90vw;
   height: auto;
@@ -13,7 +12,6 @@
 
 .title {
   font-size: clamp(20px, 22.2vw, 48px);
-
   color: #c9ab66;
   background: transparent;
   margin: 0 auto;
@@ -44,12 +42,12 @@
   padding-right: clamp(50px, 6vw, 80px);
   background: transparent;
 }
-.textContainer div {
-  background-color: #ffffff;
+.simpleArticle {
+  background: transparent;
   font-size: 20px;
 }
-.textContainer div strong {
-  background-color: #fff;
+.simpleArticle strong {
+  background: transparent;
   font-size: 20px;
 }
 .textLReft {
@@ -57,6 +55,7 @@
   padding: 25px 12px 25px;
   text-align: center;
   font-weight: 700;
+  font-size: 20px;
   margin-bottom: 30px;
 }
 
@@ -66,14 +65,15 @@
     gap: 15px;
   }
 
-  .textContainer div {
-    background-color: #ffffff;
+  .simpleArticle {
     font-size: 14px;
   }
-  .textContainer div strong {
+  .simpleArticle strong {
     font-size: 14px;
   }
-
+  .textLReft {
+    font-size: 14px;
+  }
   .title::after {
     width: 55%;
     margin-top: 10px;

@@ -14,8 +14,6 @@
 .card {
   position: sticky;
   max-width: 1100px;
-  max-height: 500px;
-  height: 500px;
   top: 0px;
   z-index: 5;
   background-color: #d4a574;
@@ -29,7 +27,8 @@
   background-color: #995c24;
 }
 .cardImg {
-  aspect-ratio: 5 / 5;
+  aspect-ratio: 1 / 1;
+  grid-column: 2;
 }
 
 .cardImg img {
@@ -42,6 +41,8 @@
 
 .cardText {
   display: flex;
+  grid-column: 1;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -101,6 +102,8 @@ h3 {
     align-items: center;
     justify-content: center;
     background: transparent;
+    text-align: center;
+    padding: 10px;
   }
   .cardText h1 {
     font-size: 30px;
@@ -123,28 +126,28 @@ h3 {
     font-size: 24px;
   }
 }
-@media (max-width: 720px) {
+
+@media (max-width: 600px) {
   .card {
-    max-width: 340px;
-    height: auto;
+    max-width: 83vw;
+    height: 45vw;
   }
   .cards {
     gap: 10px;
   }
-  .cardImg img {
-    display: grid;
-    height: 170px;
+
+  .cardImg {
+    aspect-ratio: 1/1;
   }
 
   .cardText {
+    aspect-ratio: 1/1;
+    width: 41vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: transparent;
-    max-height: 170px;
-    max-width: 170px;
-    width: 170px;
   }
   .cardText h1 {
     font-size: 26px;
@@ -166,6 +169,32 @@ h3 {
     font-size: 18px;
     margin-left: 20px;
     margin-right: 20px;
+    padding: 0px 20px 0px;
+  }
+}
+
+@media (max-width: 390px) {
+  .cardText h1 {
+    font-size: 22px;
+    font-family: "Lateef";
+    line-height: 1.1;
+    font-weight: 400;
+    background: transparent;
+    color: #000;
+  }
+
+  .cardText h2,
+  h3 {
+    font-size: 16px;
+    font-family: "Lateef";
+    font-weight: 400;
+    background: transparent;
+    color: #000;
+  }
+  .cardText a {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
 
     padding: 0px 20px 0px;
   }
