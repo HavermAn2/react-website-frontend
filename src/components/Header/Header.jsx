@@ -1,5 +1,6 @@
 import header from "./Header.module.css";
 import NavBar from "./NavBar.jsx";
+import Button from "../Button.jsx";
 export default function Header() {
   return (
     <header className={header.header}>
@@ -12,9 +13,9 @@ export default function Header() {
           </span>
         </a>
         <NavBar />
-        <a className={header.getInTouchBtn} href="#contact">
+        <Button className={header.getInTouchBtn} href="#">
           Get In Touch
-        </a>
+        </Button>
       </div>
     </header>
   );

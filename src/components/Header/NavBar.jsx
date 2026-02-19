@@ -6,8 +6,9 @@ export default function Header() {
       <ul className={header.navList}>
         <NavButton href="#">Home</NavButton>
         <NavButton href="#good-cards-containeer">Book Online</NavButton>
-        <NavButton href="#">Blog</NavButton>
-        <NavButton href="#articles-and-updates">Special</NavButton>
+        <NavButton href="https://www.instagram.com/slavrada_official/">
+          Blog
+        </NavButton>
       </ul>
     </nav>
   );

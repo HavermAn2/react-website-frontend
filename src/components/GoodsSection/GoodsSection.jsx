@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export default function GoodsSection({ onSelected, isOpen }) {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/get_services")
+    fetch("https://zxzpm6yxp7.eu-central-1.awsapprunner.com/get_services")
       .then((r) => r.json())
       .then((json) => {
         const list = (json.data ?? []).map(
@@ -21,9 +21,7 @@ export default function GoodsSection({ onSelected, isOpen }) {
       .catch(console.error);
   }, []);
 
-  // const cards = data.data;
   function onSecetedCard(cardTitle, cardDesc, cardImg) {
-    console.log(data);
     onSelected({ title: cardTitle, desc: cardDesc, image: cardImg });
     isOpen(true);
   }
@@ -37,6 +35,7 @@ export default function GoodsSection({ onSelected, isOpen }) {
               index % 2 === 0 ? `${goods.card} ${goods.odd}` : goods.card
             }
             style={{ top: 35 * index }}
+            key={item.id}
           >
             <div className={goods.cardText}>
               <h1>{item.title}</h1>
@@ -53,7 +52,9 @@ export default function GoodsSection({ onSelected, isOpen }) {
               </a>
             </div>
             <div className={goods.cardImg}>
-              <img src={`http://127.0.0.1:8000/${item.img}`} />
+              <img
+                src={`https://zxzpm6yxp7.eu-central-1.awsapprunner.com/${item.img}`}
+              />
             </div>
           </div>
         ))}

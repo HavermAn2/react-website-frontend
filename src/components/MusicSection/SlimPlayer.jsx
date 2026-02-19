@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import track from "./SlimPlayer.module.css";
 
-const allAudios = []; // общий список для “паузы остальных”
+const allAudios = [];
 
 export default function SlimPlayer({ trackSrc, title, meta, imgSrc }) {
   const playerRef = useRef(null);
@@ -11,7 +11,6 @@ export default function SlimPlayer({ trackSrc, title, meta, imgSrc }) {
     const player = playerRef.current;
     if (!player || !trackSrc) return;
 
-    // создаём Audio-объект (как у тебя в скрипте)
     const audio = new Audio(trackSrc);
     audio.preload = "metadata";
     audioRef.current = audio;
@@ -74,7 +73,6 @@ export default function SlimPlayer({ trackSrc, title, meta, imgSrc }) {
       if (!playBtn) return;
 
       if (audio.paused) {
-        // пауза всех остальных
         allAudios.forEach((a) => {
           if (a !== audio) a.pause();
         });
@@ -116,14 +114,14 @@ export default function SlimPlayer({ trackSrc, title, meta, imgSrc }) {
     playBtn?.addEventListener("click", onPlayClick);
     range?.addEventListener("input", onRangeInput);
     volBtn?.addEventListener("click", onVolClick);
-    audio
-      .play()
-      .then(() => {
-        if (playBtn) playBtn.dataset.state = "playing";
-      })
-      .catch(() => {
-        if (playBtn) playBtn.dataset.state = "paused";
-      });
+    // audio
+    //   .play()
+    //   .then(() => {
+    //     if (playBtn) playBtn.dataset.state = "playing";
+    //   })
+    //   .catch(() => {
+    //     if (playBtn) playBtn.dataset.state = "paused";
+    //   });
     return () => {
       audio.pause();
       audio.src = "";
@@ -150,7 +148,6 @@ export default function SlimPlayer({ trackSrc, title, meta, imgSrc }) {
         <h3 className={track.track__title}>{title}</h3>
         <p className={track.track__meta}>{meta}</p>
 
-        {/* data-player нужно, чтобы находить другие плееры */}
         <div
           ref={playerRef}
           data-player="slim"

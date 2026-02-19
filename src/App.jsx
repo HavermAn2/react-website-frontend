@@ -10,13 +10,15 @@ import Footer from "./components/Footer/Footer";
 import SpecialEdition from "./components/GoodsSection/SpecialEdition";
 import Modal from "./components/Modal/Modal";
 import DialogContent from "./components/Modal/DialogContent";
-
+import Success from "./components/Modal/Success";
 function App() {
   const [index, setIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState({});
   const [isOpen, setIsOpen] = useState(false);
+  const [isSent, setIsSent] = useState(false);
   function handleCloseDialog() {
     setIsOpen(false);
+    setIsSent(false);
   }
   return (
     <>
@@ -26,14 +28,17 @@ function App() {
       <AboutSection />
       <ArticleSection idx={index} handleSetIdx={setIndex} />
       <GoodsSection onSelected={setSelectedCard} isOpen={setIsOpen} />
-      {/* <SpecialEdition
-        imgUrl="/Frame 39.png"
-        h1="Violin & Harp Duo"
-        h2="An Enchanting Collaboration"
-      /> */}
       <Footer />
       <Modal isOpen={isOpen} onClose={handleCloseDialog}>
-        {isOpen && <DialogContent card={selectedCard} />}
+        {isSent ? (
+          <Success />
+        ) : (
+          <DialogContent
+            card={selectedCard}
+            onHandleSendData={setIsSent}
+            onHandleModalOpen={setIsOpen}
+          />
+        )}
       </Modal>
     </>
   );

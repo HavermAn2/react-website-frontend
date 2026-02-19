@@ -38,11 +38,7 @@ export default function MusicJourney() {
                 <strong>{item.strong}</strong> {item.text}
               </div>
             ) : item.variant ? (
-              <div
-                className={musicJor.textLReft}
-                // style={{ backgroundColor: "#f9f6ef" }}
-                key={index}
-              >
+              <div className={musicJor.textLReft} key={index}>
                 {item.text}
               </div>
             ) : (

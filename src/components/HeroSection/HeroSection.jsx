@@ -1,4 +1,5 @@
 import hero from "./HeroSection.module.css";
+import Button from "../Button";
 export default function Header() {
   return (
     <>
@@ -14,15 +15,18 @@ export default function Header() {
             </p>
 
             <div className={hero.actions}>
-              <a
+              <Button
                 className={`${hero.btns} ${hero.btnPrimary}`}
                 href="#good-cards-containeer"
               >
                 Book performance
-              </a>
-              <a className={`${hero.btns} ${hero.btnGhost}`} href="#videos">
+              </Button>
+              <Button
+                className={`${hero.btns} ${hero.btnGhost}`}
+                link="https://www.youtube.com/c/SlaVrada"
+              >
                 Watch Videos
-              </a>
+              </Button>
             </div>
           </div>
 

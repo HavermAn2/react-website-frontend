@@ -26,10 +26,6 @@
   transition: background-color 0.3s ease;
 }
 
-/* .container button:active {
-  background-color: #a89a86;
-} */
-
 .track:hover {
   border-radius: 10px;
   background-color: #c8bba9;
@@ -52,12 +48,6 @@
   background: #ffffff;
 }
 
-/* .appleMusic:hover {
-  background: #e09ea6;
-} */
-/* .appleMusic img {
-  mix-blend-mode: multiply;
-} */
 .title {
   max-width: 1440px;
   margin: 0px auto;
@@ -78,6 +68,9 @@
 
 .textContainer div {
   background: transparent;
+  color: black;
+  opacity: 0.7;
+  font-size: 12px;
 }
 .cardImg {
   background: transparent;

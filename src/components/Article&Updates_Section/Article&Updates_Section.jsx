@@ -5,18 +5,23 @@ export default function ArticleSection() {
   const [moved, setMoved] = useState(0);
   const [articleData, serArticleData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/get_articles")
-      .then((response) => response.json())
-      .then((res) => {
-        const list = (res.data ?? []).map(([id, h1, p, imgUrl]) => ({
-          id,
-          h1,
-          p,
-          imgUrl,
-        }));
-        serArticleData(list);
-      })
-      .catch(console.error);
+    async function articlesFetch() {
+      await fetch(
+        "https://zxzpm6yxp7.eu-central-1.awsapprunner.com/get_articles",
+      )
+        .then((response) => response.json())
+        .then((res) => {
+          const list = (res.data ?? []).map(([id, h1, p, imgUrl]) => ({
+            id,
+            h1,
+            p,
+            imgUrl,
+          }));
+          serArticleData(list);
+        })
+        .catch(console.error);
+    }
+    articlesFetch();
   }, []);
   function handleMoveRight() {
     if (moved > -articleData.length + 2) setMoved((prev) => prev - 1);
@@ -54,7 +59,9 @@ export default function ArticleSection() {
                 style={{ transform: `translateX(${120 * moved}%)` }}
               >
                 <div className={article.cardView}>
-                  <img src={`http://127.0.0.1:8000/${item.imgUrl}`} />
+                  <img
+                    src={`https://zxzpm6yxp7.eu-central-1.awsapprunner.com/${item.imgUrl}`}
+                  />
                 </div>
                 <div className={article.cardTxt}>
                   <h1>{item.h1}</h1>
